@@ -10,7 +10,7 @@ Pass name, phone, email and bookName. bookName will fall back to `untitled` if n
 #### removeContact(id)
 Removes selected contact from Address Book.
 
-#### getContactFromABook(bookName)
+#### getAllContactsFromABook(bookName)
 Shows contact list in selected Address Book.
 
 #### getAllContacts()

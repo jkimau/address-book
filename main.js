@@ -65,7 +65,7 @@ function App() {
     console.log(addressBook);
   }
 
-  this.getContactFromABook = function(bookName) {
+  this.getAllContactsFromABook = function(bookName) {
     const addressBookCopy = Object.assign({}, addressBook)
 
     if (!bookName) {
