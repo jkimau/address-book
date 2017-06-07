@@ -30,6 +30,9 @@ function Helper() {
   }
 }
 
+/**
+* Contact
+*/
 function Contact(name, phone, email) {
   const helper = new Helper()
   this.id = helper.getUniqueNumber()
@@ -87,7 +90,7 @@ function App() {
 
     Object.keys(addressBook).forEach(function(key) {
       if (addressBook[key].length) {
-        console.log(`You have ${addressBook[key].length} contacts from "${key}" address book.`)
+        console.log(`You have ${addressBook[key].length} contacts in "${key}" address book.`)
         console.log(addressBook[key]);
       }
     })
@@ -103,16 +106,30 @@ function App() {
   }
 
   this.removeContact = function(id) {
-    const index = addressBook.findIndex(function(contact) {
-      return contact.id === id
+    let index
+    let bookName
+
+    Object.keys(addressBook).forEach(function(key) {
+      index = addressBook[key].findIndex(function(contact) {
+        if (contact.id === id) {
+          bookName = key
+          return true
+        }
+      })
     })
 
     if (index === -1) {
       console.log(`No such id(${id}) exist in your address book.`);
     }
 
-    const removedContact = addressBook.slice(index, 1)
-    console.log(`${removeContact.name} ${removeContact.phone} ${removeContact.email} has been removed from "${removeContact.book}" address book.`);
+    const removedContact = addressBook[bookName].splice(index, 1)[0]
+
+    if (!addressBook[bookName].length) {
+      delete addressBook[bookName]
+    }
+
+    console.log(`${removedContact.name} ${removedContact.phone} ${removedContact.email} has been removed from "${removedContact.book}" address book.`);
+    console.log(addressBook);
   }
 }
 
