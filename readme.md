@@ -1,5 +1,5 @@
 # How to run
-- Copy whole code and paste into Chrome Inspector console
+- Copy whole code of `main.js` and paste into Chrome Inspector console
 - Run API methods
 
 # API
