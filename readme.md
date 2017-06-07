@@ -5,19 +5,19 @@
 # API
 
 - #### addContact(name, phone, email, bookName = 'untitled')
-Pass name, phone, email and bookName. bookName will fall back to `untitled` if not passed.
+  Pass name, phone, email and bookName. bookName will fall back to `untitled` if not passed.
 
 - #### removeContact(id)
-Removes selected contact from Address Book.
+  Removes selected contact from Address Book.
 
 - #### getAllContactsFromABook(bookName)
-Shows contact list in selected Address Book.
+  Shows contact list in selected Address Book.
 
 - #### getAllContacts()
-Shows all contact list from every Address Books.
+  Shows all contact list from every Address Books.
 
 - #### getAllAddressBookNames()
-Shows all Address Book names in an array.
+  Shows all Address Book names in an array.
 
 # Example
 ```
