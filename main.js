@@ -10,23 +10,12 @@ function Helper() {
     return new Date().getTime()
   }
 
-  this.isObjectEmpty = function(object) {
-    return Object.keys(object).length === 0 && object.constructor === Object
-  }
-
   this.hasSameContact = function(addressBook, newContact) {
     Object.keys(addressBook).forEach(function(key) {
       addressBook[key].forEach(function(contact) {
         return JSON.stringify(contact) === JSON.stringify(newContact)
       })
     })
-  }
-
-  this.getArray = function(array) {
-    if (array.constructor !== Array) {
-      throw new Exception('You must pass an array as a parameter.')
-    }
-    return Object.assign({}, array)
   }
 }
 
